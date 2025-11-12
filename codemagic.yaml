@@ -1,0 +1,15 @@
+workflows:
+  ios-workflow:
+    name: iOS workflow
+    environment:
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: dev.nekit.MullvadVPN
+        provisioning_profiles:
+          - Mullvad
+        certificates:
+          - Mullvad
+
+    scripts:
+      - name: Setup code signing
+        script: xcode-project use-profiles
